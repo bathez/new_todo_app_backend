@@ -1,0 +1,21 @@
+
+version: '3.8'
+services:
+  dev_db:
+    image: postgres
+    ports: 
+      - 5434:5432
+    environment:
+      POSTGRES_USER: kingsley
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: commerce_db
+    networks:
+      - innovate
+  cache:
+    image: redis
+    ports: 
+      - 6379:6379
+    networks:
+      - innovate
+networks:
+  innovate:
